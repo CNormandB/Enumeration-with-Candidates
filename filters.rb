@@ -6,7 +6,11 @@ def find(id)
   end
   
   def experienced?(candidate)
-    # Your code Here
+  if candidate.has_key?(:years_of_experience) && candidate[:years_of_experience] >= 2
+    return true
+  else
+    return false
+  end
   end
   
   def qualified_candidates(candidates)

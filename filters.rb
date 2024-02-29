@@ -49,3 +49,9 @@ end
 def is_adult?(candidate)
   candidate[:age] && candidate[:age] > 17
 end
+
+#orders candidates with most expreienced first
+#if they have the same amount of experience they're sorted by who has the higher github points
+def ordered_by_qualifications(candidates)
+  candidates.sort_by { |candidate| [-candidate[:years_of_experience], -candidate[:github_points]] }
+end
